@@ -1,8 +1,11 @@
 import { ProfileOrdersUI } from '@ui-pages';
 import { TOrder } from '@utils-types';
-import { FC } from 'react';
-import { useSelector } from '../../services/store';
-import { getOrders } from '../../services/slices/userSlice/userSlice';
+import { FC, useEffect } from 'react';
+import { useDispatch, useSelector } from '../../services/store';
+import {
+  getOrders,
+  getUserOrders
+} from '../../services/slices/userSlice/userSlice';
 
 export const ProfileOrders: FC = () => {
   /** TODO: взять переменную из стора */

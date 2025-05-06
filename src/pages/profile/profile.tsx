@@ -8,11 +8,7 @@ import {
 
 export const Profile: FC = () => {
   const dispatch = useDispatch();
-  const userData = useSelector(getUser);
-  const user = {
-    name: userData.name,
-    email: userData.email
-  };
+  const user = useSelector(getUser);
 
   const [formValue, setFormValue] = useState({
     name: user.name,
@@ -34,8 +30,8 @@ export const Profile: FC = () => {
     !!formValue.password;
 
   const handleSubmit = (e: SyntheticEvent) => {
-    e.preventDefault();
     dispatch(updateUserData(formValue));
+    e.preventDefault();
   };
 
   const handleCancel = (e: SyntheticEvent) => {
@@ -63,6 +59,4 @@ export const Profile: FC = () => {
       handleInputChange={handleInputChange}
     />
   );
-
-  return null;
 };

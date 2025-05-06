@@ -26,3 +26,10 @@
 .detailHeader {
   text-align: center;
 }
+
+.page_container {
+  max-width: 640px;
+  margin: 120px auto 0;
+  width: 100%;
+  padding: 0 20px;
+}

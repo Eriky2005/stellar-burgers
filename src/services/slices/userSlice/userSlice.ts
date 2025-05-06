@@ -60,8 +60,9 @@ export const userLogout = createAsyncThunk(
   async () => await logoutApi()
 );
 
-export const getUserOrders = createAsyncThunk('user/getUserOrders', async () =>
-  getOrdersApi()
+export const getUserOrders = createAsyncThunk(
+  'user/getUserOrders',
+  async () => await getOrdersApi()
 );
 
 export const newUserOrder = createAsyncThunk(
@@ -180,7 +181,7 @@ export const userSlice = createSlice({
   }
 });
 
-const userSliceSelectors = (state: RootState) => state.auth;
+const userSliceSelectors = (state: RootState) => state.user;
 
 export const getUserAuthStatus = createSelector(
   [userSliceSelectors],

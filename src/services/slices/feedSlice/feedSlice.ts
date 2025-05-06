@@ -35,7 +35,7 @@ export const getOrderByNumber = createAsyncThunk(
 );
 
 const feedsSlice = createSlice({
-  name: 'ingredients',
+  name: 'feeds',
   initialState,
   reducers: {},
   extraReducers(builder) {

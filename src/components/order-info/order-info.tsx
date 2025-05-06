@@ -16,7 +16,7 @@ export const OrderInfo: FC = () => {
   const currentNumber = Number(useParams().number);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getOrderByNumber(currentNumber));
+    dispatch(getOrderByNumber(Number(currentNumber)));
   }, [dispatch]);
   const isSearchSuccess = useSelector(isSearchSuccessSelector);
   const orderData = useSelector(getOrderByNumberSelector);
