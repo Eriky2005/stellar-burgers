@@ -62,7 +62,7 @@ export const userLogout = createAsyncThunk(
 
 export const getUserOrders = createAsyncThunk(
   'user/getUserOrders',
-  async () => await getOrdersApi()
+  getOrdersApi
 );
 
 export const newUserOrder = createAsyncThunk(
@@ -153,14 +153,7 @@ export const userSlice = createSlice({
         state.user = initialState.user;
       })
 
-      .addCase(getUserOrders.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(getUserOrders.rejected, (state, action) => {
-        state.loading = false;
-      })
       .addCase(getUserOrders.fulfilled, (state, action) => {
-        state.loading = false;
         state.orders = action.payload;
       })
 

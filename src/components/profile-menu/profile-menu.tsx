@@ -9,14 +9,13 @@ export const ProfileMenu: FC = () => {
   const { pathname } = useLocation();
   const dispatch = useDispatch();
 
-  const handleLogout = () => {
+  const handleLogout = () =>
     dispatch(userLogout())
       .unwrap()
       .then(() => {
         deleteCookie('accessToken');
         localStorage.removeItem('refreshToken');
       });
-  };
 
   return <ProfileMenuUI handleLogout={handleLogout} pathname={pathname} />;
 };
