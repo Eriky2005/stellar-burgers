@@ -30,7 +30,7 @@ const burgerConstructorSlice = createSlice({
         action.payload.type === 'bun'
           ? (state.constructorBun = action.payload)
           : state.constructorIngredients.push(action.payload);
-        console.log(action.payload._id);
+        //console.log(action.payload._id);
       }
     },
 
