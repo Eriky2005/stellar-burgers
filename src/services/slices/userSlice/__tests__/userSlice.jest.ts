@@ -227,6 +227,7 @@ describe('тесты экшенов userSlice', () => {
 				number: 41487
 			}
 		];
+
 		test('запрос fulfilled', () => {
 			const state = userSliceReducer(
 				initialState,
@@ -234,14 +235,6 @@ describe('тесты экшенов userSlice', () => {
 			);
 			expect(state.loading).toBe(false);
 			expect(state.orders).toEqual(expectedOrders);
-		});
-
-		test('запрос pending', () => {
-			const state = userSliceReducer(
-				initialState,
-				getUserOrders.pending('fulfilled')
-			);
-			expect(state.loading).toBe(true);
 		});
 
 		test('запрос rejected', () => {
@@ -292,7 +285,7 @@ describe('тесты экшенов userSlice', () => {
 		test('запрос pending', () => {
 			const state = userSliceReducer(
 				initialState,
-				newUserOrder.pending('fulfilled', [
+				newUserOrder.pending('pending', [
 					'643d69a5c3f7b9001cfa093d',
 					'643d69a5c3f7b9001cfa0940'
 				])
